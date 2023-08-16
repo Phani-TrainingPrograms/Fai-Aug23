@@ -1,0 +1,99 @@
+Training on .NET for FAI Aug 23. 
+What is .NET Framework?
+Its a group of components in the form of libraries and Compilers with a support of various tools to develop various kinds of Applications in a platform independent manner. 
+Primarily focused on Windows platform, but can be executed on other platforms like Unix and iOS.
+.NET consists of libraries, tools, Compilers and an executing Environment to run the Applications (CLR) that U create on .NET Framework. 
+
+What is C#?
+C# is a programming language based on C++ which is OO and very easy to work with. It is primarily created for .NET App development. Our Course uses C# as the programming language. 
+
+What other languages could be used in .NET App Development?
+One of the main features of .NET is that it supports multiple languages. 
+Languages like C++, Python, Cobol, Pascal, VB can be used for developing Apps in .NET.
+
+What kind of Apps can U develop with .NET?
+U can develop Console based Apps(Terminal), Windows based Apps, Web Apps, Database Apps, Microservices, REST APIs, Micro level Apps.
+
+Why to go for .NET?
+If UR target audience are Windows users, Multiple Device users, U need to work with .NET Framework. It has support from Microsoft. It has got a lot of community support. 
+
+Features of .NET Framework?
+1. It is a multi language support. 
+2. It can be executed on multiple platforms, mainly on Windows OS. 
+3. Features are Object oriented which makes it easy to adapt and extend. 
+4. It can be used for developing various kinds of Applications. 
+5. It can be used to work with multiple databases (Almost every kind of DB). 
+6. It has automatic memory management thru' Garbage collector which ensures that U never run out of memory in UR Application. 
+
+How can we use .NET Framework in our app development?
+1. Download the .NET Framework, latest is 4.8.x. For Windows Users, it is available automatically as a part of the OS itself. 
+2. Use any Text editor for creating the Apps. But at industrial scale, we use Visual Studio. 
+
+What is Visual Studio?
+VS is an IDE for developing various kinds of Apps(.NET and non .NET) with variety of languages in it. It is very popular and its proprietory. However, we have a community edition that can be downloaded for free from the MS website and can be used for learning, evaluation and non commercial purposes. 
+
+Points to remember:
+1. Customize the IDE by selecting Tools->Options menu. 
+2. U can get all the child windows of the IDE from View menu. 
+3. Solution Explorer is a Window that contains the file info of the current project/solution U R working.  A Solution is group of Projects and a Project is a group of files that when built, will create a final output file in the form of DLL or EXE. 
+4. To view all the classes that U have created in your project, U can use the ClassView Window. 
+5. To configure the external databases, we use Server Explorer.
+6. We cannot create the code files directly and execute them in VS. Any Code file that U create must be a part of the Project. Only files belonging to the project can be compiled.
+7. It makes the App development more organised. 
+
+How to create Applications in Visual Studio?
+1. Open the VS.
+2. Select any existing projects or create a new Project. 
+3. U can select a project template from the Available list of Projects. 
+4. For our Basic training, we use Console App with .NET Framework. The Project Type is Console App(.NET Framework). 
+5. UR Files in C# are saved with .cs Extension. 
+
+How Framework gives the classes to Us?
+The classes in the Framework are grouped into namespaces. U use the namespace and consume the classes. 
+Console is a class that is defined under System namespace, U should use the System namespace and call the class within UR code. 
+Console is a static class that can be used to perform Console based Operations. This includes reading and writing to the Console. 
+Any inputs from the Console is available as ReadLine and any output will be WriteLine. 
+WriteLine writes a stream of text on the Console Window.
+ReadLine reads a input as Text and returns as string. 
+
+Data Types:
+C# uses the .NET Data types. .NET has CTS (Common Type System) which is used to define the data types that can be used in .NET. As .NET is a language independent technology, it expects all the languages to follow common datatypes. These data types are called as Common Type System. 
+All C# data types are CTS types. 
+Broadly data types are divided into 2 parts:
+1. Value Types: Value types are primitive types that are common in all the programming languages
+a. Integral Types: byte(8), short(16), int(32), long(64). 
+b. Floating Types: float, double, decimal
+c. Other types: char, bool,
+d. User defined Types: Enum, Structs and DateTime. 
+NOTE: All Structs are value types. 
+The variable of this kind will store the actual value in it. 
+2. Reference Types.
+
+How to set the entry point in a Project
+If the project has multiple files with Main method in it, then it gives compiler error for multiple mains. 
+U can resolve this by selecting the Startup class. Select the Project menu and Properties inside it to open the Properties window. Choose the Start up object drop down list to find UR class that U want to set as Entry point. 
+
+What are arrays?
+Arrays are collection of data belonging to the same type. 
+Arrays in C# are fixed in size, their index starts with 0. Each element in the array is refered using subscript operator []. 
+Arrays in C# are objects of a class called System.Array. With the object instance, comes a variety of properties and methods that help in getting the info about the array object. Like length(size), Rank(Dimension), GetLength(Gets the length of each dimension) and many more. 
+Array has also got static methods that help in creating Arrays dynamically. 
+All Arrays are reference types. 
+
+Features of Foreach statement
+1. Its forward only and read only. 
+2. It can work only on collections. 
+3. For taking inputs to a collection, use for loop and for reading the data from the collection, use the foreach loop. 
+
+
+
+
+
+
+
+ 
+
+
+
+
+  
