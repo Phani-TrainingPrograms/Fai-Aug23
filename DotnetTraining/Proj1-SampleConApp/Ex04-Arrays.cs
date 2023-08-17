@@ -58,4 +58,5 @@ namespace Proj1_SampleConApp
 }
 //todo: Get the concept of Jagged Arrays in C#. 
 //Try to create an Array of the size taken as input from the User and even the data type taken as input from the user and develop an app that stores the values as array and display the items of the array. 
+//Create an Array of integers taking inputs from the user and display the max, min and avg value of the array.
 
