@@ -61,9 +61,9 @@ C# uses the .NET Data types. .NET has CTS (Common Type System) which is used to 
 All C# data types are CTS types. 
 Broadly data types are divided into 2 parts:
 1. Value Types: Value types are primitive types that are common in all the programming languages
-a. Integral Types: byte(8), short(16), int(32), long(64). 
-b. Floating Types: float, double, decimal
-c. Other types: char, bool,
+a. Integral Types: byte(8, Byte), short(16, Int16), int(32, Int32), long(64, Int64). 
+b. Floating Types: float(Single), double(Double), decimal(Decimal)
+c. Other types: char(Char), bool(Boolean),
 d. User defined Types: Enum, Structs and DateTime. 
 NOTE: All Structs are value types. 
 The variable of this kind will store the actual value in it. 
@@ -79,13 +79,51 @@ Arrays in C# are fixed in size, their index starts with 0. Each element in the a
 Arrays in C# are objects of a class called System.Array. With the object instance, comes a variety of properties and methods that help in getting the info about the array object. Like length(size), Rank(Dimension), GetLength(Gets the length of each dimension) and many more. 
 Array has also got static methods that help in creating Arrays dynamically. 
 All Arrays are reference types. 
+Jagged array is array of arrays. It has a fixed no of rows and each row comes with variable no of columns. The row will have an instance of a new array in it.  
 
 Features of Foreach statement
 1. Its forward only and read only. 
 2. It can work only on collections. 
 3. For taking inputs to a collection, use for loop and for reading the data from the collection, use the foreach loop. 
 
+Reference types are type of data that store the reference(Address) of the value instead of the value itself. 
+All classes are reference types. String, Array, Classes, object is a reference type. Usually they are created using new operator. 
+object is the universal data type of CTS. It can store any kind of data in it. All other datatypes are inherited (Extended) from object.
+When a primitive type is stored inside an object, it is called as BOXING. 
+When the Boxed object is reconverted back to the primitive type, then it's called as UNBOXING. 
+BOXING is implicit and UNBOXING is explicit. 
 
+Enums: Named constants.
+It is a user defined value data type. The constant value will always be an integral type. 
+If U want some constant values representable as a group and refered by their name, we go for named constants. They internally enumerate the values. If the first value is 100, the next enum value will be internally storing 101 and continue for other enum values by incrementing by 1.
+
+Structs: 
+Structs are composite data types that store different kinds of data and represent it as one Data type. It is the Non-object oriented class. Stucts are not object oriented. 
+UR constructors if created, should be parameterised. Default constructors(With no parameters) is not supported in structs. 
+But like classes, U can have static functions, properties, normal functions. 
+ 
+Functions in C#:
+There are 2 kinds of functions: static functions and instance functions. 
+static functions dont need an object of its class when used.
+instance functions can be called only thru' the instance of the class. 
+We create static functions if it is required to be used very frequently. With this, U will not create the object, but call the method by its classname. It gives a singleton look for the Application. 
+Example: Utilities class contains functions that are used very frequently in our Application, so all the methods are made as static.
+Functions have parameters to inject dependencies for implementing the functionality. 
+All parameters will be input parameters if not specified as out or ref. 
+out parameter is one where the parameter value is set by the function and the caller only passes the variable into the function. The caller of the function need not initialize the variable.
+ref parameter is used when the caller of the function has some initial value that can be modified within the function when called. The caller will either get the modified data or retain the initial value set by the caller.
+Use params for passing variable number of arguments for a function. params will always be an array. It should be the last of the parameter list for the function. U cannot have multiple params within one function. params cannot be passed as ref or out parameter. 
+  
+
+
+
+ 
+ 
+
+
+
+
+ 
 
 
 
