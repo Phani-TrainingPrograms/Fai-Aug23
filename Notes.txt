@@ -114,6 +114,52 @@ out parameter is one where the parameter value is set by the function and the ca
 ref parameter is used when the caller of the function has some initial value that can be modified within the function when called. The caller will either get the modified data or retain the initial value set by the caller.
 Use params for passing variable number of arguments for a function. params will always be an array. It should be the last of the parameter list for the function. U cannot have multiple params within one function. params cannot be passed as ref or out parameter. 
   
+A Class is the fundamental unit of OOP. It is a user defined type(Composite) that will have data as well as behavior to manipulate the data. A Class comes with OO Features like Encapsulation, Inheritance and Polymorphism. 
+A Class is first created with definitions (What the class contain and what it will do). To Use the class, we need an object (Instance of the class, variable of the class). Just like the way U create variables of the predefined data types, U create objects for the Classes. 
+All Classes are reference types. 
+A class can contain the following members: fields, properties, methods, events, nested data types(structs, classes and enums). 
+They will have OOP Features: Data will be encapsulated, methods are created and can be overriden and objects behave polymorphically. It also promotes Abstraction and interface programming. Abstraction is a form of encapsulation where we hide the features not the data. Features that need not be exposed to the user can be abstracted. However the features are used and the user can feel it if not see the functionality. 
+Most of the time, classes are real time entities which represent the real time data programmatically. 
+There are different kinds of classes that U create. 
+Entity classes are those classes that are created to represent real world entities. Example would be a book, customer, patient, record, author, bill, food, product, item, disease, room....
+Entity classes usually have only properties and sometimes methods to manipulate the properties. 
+Classes that have functions to modify the private hidden data and so some saving to a database or a file are called Repository classes. These classes will have methods to manipulate the data and save them to the permanent storage device like a Database, file or an in-memory cache.
+Utility classes like Helper functions, Logging Functions, Exception classes that are used across the Layers of UR Application. Helper Functions are usually static functions that are used to perform common operations of UR App. 
+
+Constructors:
+If UR objects have to be created, we use a function to set the initial values to our fields/data to make the object usable in our Application. This function has to be automatically called when the object is created.
+The function will have the same name as the class with no return types, not even void. A Function with no return type is always a constructor and its name must always be the class name.
+It can be parameterised. U can have multiple constructors with different parameters in each of it. 
+Constructors with various kinds of parameters are called as Overloaded Constructors. 
+Constructors maintain a chain of hierarchy while it is invoked. 
+ 
+Inheritance: 
+Inheritance is a feature of OOP that allows an existing class to be extended to another class for modification or creating new features into it. A Class is immutable. So U cannot make changes to the same class. Rather, U extend the class using the feature of Inheritance and add/remove functionalities to customize it as per your requirement. 
+C# implementation of Inheritance is Single Inheritance. It does not support multiple Inheritance. It means that a class cannot be extended from more than one base class at a given level. 
+
+Method Overriding:
+If a base/parent/super class has implemented a method, and the derived/child/sub class wants to modify the implementation, then it is called as METHOD OVERRIDING. In this case, the following rules apply:
+a. The base class must define the function with a modifier called virtual. It is like giving permission to modify the function in the derived classes if required. 
+b. The Derived class will use a modifier called override in the Function definition that implies to the system that the method is overriden. 
+Only virtual methods can be overriden in the derived classes. 
+Method overriding leads to a feature called RUNTIME Polymorphism. 
+Poly means many and morphism means forms(kinds). 
+If the base method is not virtual, and U forcefully reimplement the method, then its not method overriding. Its called METHOD HIDING. In that case, the functionaly will not be polymorphic.  
+
+Abstract classes:
+A Class is made an abstract class if one or more methods are not implemented in it. 
+Interfaces
+Events and Delegates. 
+
+
+
+
+
+
+
+
+  
+
 
 
 
