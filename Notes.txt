@@ -147,8 +147,11 @@ Poly means many and morphism means forms(kinds).
 If the base method is not virtual, and U forcefully reimplement the method, then its not method overriding. Its called METHOD HIDING. In that case, the functionaly will not be polymorphic.  
 
 Abstract classes:
-A Class is made an abstract class if one or more methods are not implemented in it. 
-Interfaces
+A Class is made an abstract class if one or more methods are not implemented in it. A method with no implementation is provided with a modifier abstract. If a class has one or more such methods, the class should be marked as abstract. Abstract classes can not be instantiated. The Abstract class can have normal methods, virtual methods and abstract methods. 
+The class that is derived from the Abstract class, must implement all the abstract methods. Else, even this class should be marked as abstract. The abstract methods are implemented using a modifier override. 
+
+Interfaces:
+Interfaces are like abstract classes but will contain only abstract methods in it. It is more like a Contract implementor. Here an interface will contain a set of operations(methods) which is implemented by a certain class that guarantees that all the methods of the interface are implemented. It is more like a contract, where it implies that if a class inherits/implements an interface, then the class will/must have the public defns of the interface methods. 
 Events and Delegates. 
 
 
