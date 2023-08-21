@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Proj1_SampleConApp.Ex09_Functions</StartupObject>
+    <StartupObject>Proj1_SampleConApp.Week_2.Ex18_CustomCollections</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,22 +46,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ex01-BasicIO.cs" />
-    <Compile Include="Ex02-DataTypes.cs" />
-    <Compile Include="Ex03-MathClass.cs" />
-    <Compile Include="Ex04-Arrays.cs" />
-    <Compile Include="Ex05-ArrayPractise.cs" />
-    <Compile Include="Ex06-ReferenceTypes.cs" />
-    <Compile Include="Ex07-Enums.cs" />
-    <Compile Include="Ex08-Structs.cs" />
-    <Compile Include="Ex09-Functions.cs" />
-    <Compile Include="Ex10-ClassesDemo.cs" />
+    <Compile Include="Common\EmpFactory.cs" />
+    <Compile Include="Models\EmpListDatabase.cs" />
+    <Compile Include="Models\IEmpDatabase.cs" />
+    <Compile Include="Week 1\Ex14-AbstractClasses.cs" />
+    <Compile Include="Week 1\Ex01-BasicIO.cs" />
+    <Compile Include="Week 1\Ex02-DataTypes.cs" />
+    <Compile Include="Week 1\Ex03-MathClass.cs" />
+    <Compile Include="Week 1\Ex04-Arrays.cs" />
+    <Compile Include="Week 1\Ex05-ArrayPractise.cs" />
+    <Compile Include="Week 1\Ex06-ReferenceTypes.cs" />
+    <Compile Include="Week 1\Ex07-Enums.cs" />
+    <Compile Include="Week 1\Ex08-Structs.cs" />
+    <Compile Include="Week 1\Ex09-Functions.cs" />
+    <Compile Include="Week 1\Ex10-ClassesDemo.cs" />
+    <Compile Include="Week 1\Ex11-Constructors.cs" />
+    <Compile Include="Week 1\Ex12-Inheritance.cs" />
+    <Compile Include="Week 1\Ex13-MethodOverriding.cs" />
+    <Compile Include="Week 1\Ex15-InterfaceProgramming.cs" />
+    <Compile Include="Week 2\Ex16-Collections.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities.cs" />
+    <Compile Include="Week 2\Ex17-Generics.cs" />
+    <Compile Include="Week 2\Ex18-CustomCollections.cs" />
+    <Compile Include="Week 2\Ex19-ExplicitInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Menu.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
