@@ -152,7 +152,64 @@ The class that is derived from the Abstract class, must implement all the abstra
 
 Interfaces:
 Interfaces are like abstract classes but will contain only abstract methods in it. It is more like a Contract implementor. Here an interface will contain a set of operations(methods) which is implemented by a certain class that guarantees that all the methods of the interface are implemented. It is more like a contract, where it implies that if a class inherits/implements an interface, then the class will/must have the public defns of the interface methods. 
-Events and Delegates. 
+
+Collections:
+Collections are data structures that store in memory data in a certain format based on the type of data storage you wish to use in your application. 
+This includes an ability to add, remove, update data at runtime, store data in the form of key-value pairs, store data in the first-come-first-server basis and many more. 
+There are 2 versions of collections in .NET:
+System.Collections that came with the 1st version of .NET which is also called as NON-GENERIC Collections
+System.Collections.Generics that came with the 2nd version of .NET which is called as GENERIC Collections. 
+Currenty, Generic version are popular, however, they are internally derived from NON-GENERIC Collections. 
+Generic collections have many advantages compared to Non Generic Collections. 
+Important classes under NON-GENERIC: ArrayList, HashTable, Stack, Queue
+Important classes under Generic: List<T>, HashSet<T>, Dictionary<K,V>, LinkedList<T>, Queue<T>, Stack<T> SortedDictionary<K,V> and many more. 
+Collections are used only to resolve the issues with Arrays. Arrays are fixed in size which makes it unrealistic in real time apps. Arrays store the data in a std format which cannot be modified as per UR business needs. 
+All the collections(generic and non generic) implement the same set of interfaces, so their methods and properties will very similar, but might be different in their implementations. 
+All Collection classes will be implemented atleast IEnumerable interface. 
+IEnumerable->ICollection->IList and many more.
+IEnumerable and ICollection will be common for most of the collection classes.  
+Non Generic collections are not type safe. As the data is stored as object, it can internally store any kind of data which hampers the purpose of Collection(Same data type). To perform computions on the collection, objects needs to be unboxed. This will not be optimized.
+Generic Classes:
+List<T> works similar to Arrays where the data is added to the bottom of the list. Unlike Arrays, it can store data at runtime, add, remove, update at runtime and any where in the collection. List<T> cannot check for unique values, it allows to have duplicates. 
+
+HashSet<T> works similar to List<T> but will store unique values only. It checks the HashValue of the element and ensures that it is unique and applies the logical equivalence before adding the element to the collection. 
+
+Dictionary<K,v> stores the data in the form of key-value pairs. The key is unique for the collection. The key uniqueness is based on the Hash Value of the element. The data types of key or the value need not be same. 
+Key works like an index where U can use key to get the value associated with that key. 
+
+To create custom Collections, U can create a class that implements IEnumerable interface. It has one function called GetEnumerator that returns a IEnumerator interface object. The IEnumerator interface has method to MoveNext within the Collection and a get Property called Current that gives access to the current element in the Collection. 
+We can use indexers for treating an object like an array. 
+Syntax of index is like property with the name this followed by subscript operator. This will help in treating the object like an array and use index to get access to the property or any other logic of the class. In the Example, the index is used to get the element of the internal collection which is hidden in the class. 
+
+Events And Delegates: 
+Events are actions performed by the User on the object. Usually events are used and created in GUI based Applications like WinForms, WebForms, MVC Apps, HTML Apps and many UI based Apps. 
+Delegates are reference types that help in creating references for functions, so that it can be used to pass methods as args for a given function. This helps in providing callback functions, event handlers, Multi threading Apps and many such scenarios where we dont know the implementation of the method but we know the signature of it. The caller of the method will provide the implementation and pass it as argument to the invoking function.  
+Delegates are created using delegate keyword and define the function signature. U dont implement it. The references of this delegate(objects/variables of the delegates) can be used as parameters for other functions. When we invoke the function that takes delegate as arg, we provide the actual function as an arg. Here is the case of passing functions as arguments.  
+There are many delegates provided by .NET Framework for doing various kinds of operations: 
+For events, we have delegate called EventHandler.
+For multi Threading, we have a delegate called ThreadStart. 
+For any kind of method that returns void, we have a generic delegate called Action. Action is overloaded with almost 17 versions of arguments.  
+For a function that returns a value, U have another delegate called Func<T> that takes multiple types as args and the last arg will be the return type of the function.
+Main advantages of delegate are the capability of callback functions, event handling, async programming. 
+
+All Events are instances of a delegate. For most of the UI based Apps, .NET gives a built in delegate called EventHandler which can be used for creating events in your classes. 
+  
+File Access in .NET is done thru streams. Streams are contigenous memory of data movement which could be an input or an output. Anything that comes into the Application is input and anything that goes from the App to the destination is output. 
+Files can be of 2 types: Binary Files or Text files. 
+All the file related classes are placed in System.IO namespace. 
+Important classes: File and Directory. 
+File is a static class that contains methods to access, read, write text based data into files. 
+
+Serialization is an ability of saving the object to a storage device instead of just the data of the object. When an object is serialized, it not only saves the data but also metadata of the object. (Info about the object: ClassName, Namespace, ProjectName, version and many more). 
+In .NET Serialization can be achieved in 3 ways: Binary, XML and SOAP. 
+Any Serialization has the 3 steps: How to serialize(Format), Where to Serialize(Location or the file System path), What to serialize(Any object of a class in .NET that has attribute(Anotations) called Serializable.
+
+Garbage collection is a feature of OOP where a reference object will be destroyed internally by the CLR(Common Language Runtime). however, the destruction might not happen immediately. 
+CLR takes its own time on destroying unused objects. 
+Thru Program, we can destroy the objects, but cannot specify on which object to remove. 
+ 
+
+ 
 
 
 
