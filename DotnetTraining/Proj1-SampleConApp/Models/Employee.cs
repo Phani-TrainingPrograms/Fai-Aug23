@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace Proj1_SampleConApp.Models
 {
     //Entity classes are those classes that are created to represent real world entities
-    class Employee
+    [Serializable]
+    public class Employee
     {
         public int EmpId { get; set; }
 

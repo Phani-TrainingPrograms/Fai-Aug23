@@ -15,6 +15,7 @@ namespace Proj1_SampleConApp.Common
             switch (type.ToLower())
             {
                 case "list": return new EmpListDatabase();
+                case "binary": return new EmpBinaryDatabase();
                 default: return new EmpListDatabase(); ;
             }
         }
