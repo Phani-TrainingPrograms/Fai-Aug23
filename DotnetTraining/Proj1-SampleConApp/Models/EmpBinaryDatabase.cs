@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Configuration;
 using System.IO;
+using Proj1_SampleConApp.Week_2;
 
 namespace Proj1_SampleConApp.Models
 {
@@ -49,11 +50,13 @@ namespace Proj1_SampleConApp.Models
             {
                 return temp.EmpId == id;
             });
-            if(foundRec != null)
+            if (foundRec != null)
             {
                 _list.Remove(foundRec);
+                save();
             }
-            save();
+            else
+                throw new EmployeeNotFoundException("Employee not found to delete");
         }
 
         public IEnumerator<Employee> GetEnumerator()
@@ -63,7 +66,11 @@ namespace Proj1_SampleConApp.Models
 
         public void UpdateEmployee(int id, Employee emp)
         {
-            throw new NotImplementedException();
+            load();
+            var rec = _list.Find((temp) => temp.EmpId == id);
+            if (rec == null)
+                throw new EmployeeNotFoundException("Employee not found to update");
+
         }
 
         IEnumerator IEnumerable.GetEnumerator()

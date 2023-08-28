@@ -19,10 +19,9 @@ namespace Proj1_SampleConApp.Week_2
     {
         public EmployeeNotFoundException() { }
         public EmployeeNotFoundException(string message) : base(message) { }
-        public EmployeeNotFoundException(string message, Exception inner) : base(message, inner) { }
- 
-    }
 
+    }
+    //todo: Modify the EmpBinaryDatabase implementation to throw EmployeeNotFoundException for the functions of Update, Delete and the indexer. handle the Exception appropriately at the front end App. 
 
     //todo: create a program that handles dividebyzero exception. 
     class Ex25_ExceptionHandling
@@ -92,16 +91,16 @@ namespace Proj1_SampleConApp.Week_2
             //fileHandlingExample();
             do
             {
-                RETRY:
                 string uname = Utilities.GetString("Enter the Registration name");
                 string pwd = Utilities.GetString("Enter the Password");
                 try
                 {
                     SignUp(uname, pwd);
-                }catch(UserAlreadyRegisteredException ex)
+                }
+                catch (UserAlreadyRegisteredException ex)
                 {
                     Console.WriteLine(ex.Message);
-                    goto RETRY;
+                    //goto RETRY;
                 }
             } while (true);
             //trycatchExample();

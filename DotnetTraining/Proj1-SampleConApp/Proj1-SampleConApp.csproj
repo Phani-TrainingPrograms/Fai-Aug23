@@ -33,10 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Proj1_SampleConApp.Week_2.Ex18_CustomCollections</StartupObject>
+    <StartupObject>Proj1_SampleConApp.Week_3.Ex27StoredProcDemo</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assignments\Hack-StringEncoder.cs" />
     <Compile Include="Common\EmpFactory.cs" />
+    <Compile Include="Models\EmpBinaryDatabase.cs" />
     <Compile Include="Models\EmpListDatabase.cs" />
     <Compile Include="Models\IEmpDatabase.cs" />
     <Compile Include="Week 1\Ex14-AbstractClasses.cs" />
@@ -71,6 +74,14 @@
     <Compile Include="Week 2\Ex17-Generics.cs" />
     <Compile Include="Week 2\Ex18-CustomCollections.cs" />
     <Compile Include="Week 2\Ex19-ExplicitInterface.cs" />
+    <Compile Include="Week 2\Ex20-Delegates.cs" />
+    <Compile Include="Week 2\Ex21-EventHandling.cs" />
+    <Compile Include="Week 2\Ex22-FileIO.cs" />
+    <Compile Include="Week 2\Ex23-Serialization.cs" />
+    <Compile Include="Week 2\Ex24-MemoryManagement.cs" />
+    <Compile Include="Week 2\Ex25-ExceptionHandling.cs" />
+    <Compile Include="Week 2\Ex26-ConnectedDataAccess.cs" />
+    <Compile Include="Week 3\Ex27StoredProcDemo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -78,5 +89,6 @@
   <ItemGroup>
     <Content Include="Menu.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
