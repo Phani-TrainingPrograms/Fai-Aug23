@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/mainStyle.css">
+    <title>Document</title>
+    <script src="../js/Ex04Classes.js"></script>
+    <script src="../js/Utils.js"></script>
+    <script>
+        const empRepo = new EmpRepo();
+        function getDetails(id){
+            const foundEmp = empRepo.getEmpById(id);
+            $("txtEditId").value = foundEmp.empId;
+            $("txtEditName").value = foundEmp.empName;
+            $("txtEditAddress").value = foundEmp.empAddress;
+            $("txtEditSalary").value = foundEmp.empSalary;
+        }
+        function onDelete(id){
+            const msg = confirm("Do U really want to delete?")
+            if(msg){
+                empRepo.deleteEmployee(id);
+                alert("Employee deleted successfully")
+                populateData();
+            }
+        }
+        function populateData(){
+            $("tblRecords").innerHTML = `<tr><th>EmpId</th><th>Emp Name</th><th>Options</th>`;
+            const records = empRepo.getAllEmployees();
+            for (let e of records) {
+                const row = `<tr><td>${e.empId}</td><td>${e.empName}</td><td><a href="#" onclick = "getDetails(${e.empId})">Edit</a><a href="#" onclick = "onDelete(${e.empId})">X</a></td></tr>`;
+                $("tblRecords").innerHTML += row;
+            };
+        }
+
+        function createEmployee(){
+            const id = parseInt($("txtEditId").value)
+            const name = $("txtEditName").value
+            const address = $("txtEditAddress").value;
+            const salary = parseInt($("txtEditSalary").value)
+            //create the emp object. 
+            const emp = new Employee(id, name, address, salary)
+            return emp;
+        }
+        window.addEventListener('load', function(){
+            $click('aList',populateData);
+
+           $click('btnUpdate', ()=>{
+            //take the inputs from the user
+            const emp = createEmployee();
+            //pass the object as arg to the update func of the empRepo. 
+            empRepo.updateEmployee(emp.empId, emp);
+            //call the populate table API again... 
+            populateData();
+           });
+        });
+    </script>
+</head>
+<body>
+    <h1>Employee Management Software</h1>
+    <nav>
+        <a id="aList" href="#">Display All</a>
+    </nav>
+    <div>
+        <h2>List of Employees</h2>
+        <hr>
+        <input class="search" type="search" id="txtSearch"/>
+        <table border="1" width="100%" id="tblRecords"></table>
+    </div>
+    <div>
+        <h2>Details of the selected Employee</h2>
+        <hr>
+        <p>
+            <input placeholder="EmpId" disabled id="txtEditId"/>
+        </p>
+        <p>
+            <input placeholder="EmpName" id="txtEditName"/>
+        </p>
+        <p>
+            <input placeholder="EmpAddress" id="txtEditAddress"/>
+        </p>
+        <p>
+            <input placeholder="EmpSalary" id="txtEditSalary"/>
+        </p>
+        <p>
+            <button id="btnUpdate">Update</button>
+        </p>
+    </div>
+</body>
+</html>

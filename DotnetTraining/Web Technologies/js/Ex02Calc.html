@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/mainStyle.css">
+    <script>
+        function onClick(){
+            //get all values
+            const fValue = parseFloat(document.getElementById('txtFirstValue').value);
+            const sValue = parseFloat(document.getElementById('txtSecondValue').value);
+            const operation = document.getElementById('slOptions').value;
+            let result = 0.0;
+            switch (operation) {
+                case "Add": result = fValue + sValue; break;
+                case "Subtract" : result = fValue - sValue; break;
+                case "Multiply" : result = fValue * sValue; break;
+                case "Divide" : result = fValue / sValue; break;
+                default:
+                    break;
+            }
+            document.getElementById('spResult').innerText = result;
+        }
+        function onInit(){
+            //get the reference of the Button....
+            const btn = document.getElementById('btnResult');
+            //add click event listener
+            btn.addEventListener("click", onClick);
+        }
+        window.addEventListener('load', onInit);
+    </script>
+</head>
+<body>
+    <div>
+        <h2>Calc Program</h2>
+        <p>
+            <input placeholder="Enter First Value" id="txtFirstValue" type="number"/>
+        </p>
+        <p>
+            <select id="slOptions">
+                <option>Select Option</option>
+                <option>Add</option>
+                <option>Subtract</option>
+                <option>Multiply</option>
+                <option>Divide</option>
+            </select>
+        </p>
+        <p>
+            <input placeholder="Enter Second Value" id="txtSecondValue" type="number"/>
+        </p>
+        <p>
+            <button id="btnResult">Result</button>
+        </p>
+        <p>
+            <span id="spResult"></span>
+        </p>
+    </div>
+</body>
+</html>

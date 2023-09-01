@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/mainStyle.css">
+    <title>Document</title>
+    <script>
+        function onProcess() {
+            //get the reference of the input, use a property called value and store it. 
+            let name = document.getElementById("txtName").value;
+            let displayArea = document.getElementById("pDisplay");
+            displayArea.innerHTML = "The Name is " + name + "<br/>";
+            displayArea.innerHTML += "The Date of birth is " + document.getElementById("txtDate").value;
+            displayArea.innerHTML += "The User skill rating is " + document.getElementById('txtRating').value
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to HTML-Images Training</h1>
+    <hr>
+    <nav>
+        <a href="Ex01Basics.html">Home</a>
+        <a href="Ex04Formatting.html">Formatting</a>
+        <a href="Ex02Lists.html">Lists</a>
+        <a href="Ex03Tables.html">Tables</a>
+        <a href="Ex05Images.html">Images</a>
+        <a href="Ex06Forms.html">Forms</a>
+    </nav>
+    <article>
+        <header>
+            <h2>User Registration Form</h2>
+            <hr/>
+        </header>
+        <div>
+            <form>
+                <p>Enter the Name : <input type="text" id="txtName" placeholder="Enter the name"/></p>
+                <p>Enter the Date of Birth : <input type="date" id="txtDate"/></p>
+                <p>Enter the EmailAddress : <input type="email" placeholder="Enter the Email Address" id="txtEmail"/></p>
+                <p>select the qualification: 
+                    <select id="slQualification">
+                        <option>Graduation</option>
+                        <option>Under Graduation</option>
+                        <option>Post Graduation</option>
+                        <option>Research</option>
+                        <option>School</option>
+                    </select>    
+                </p>
+                <p>
+                    <datalist id="lstCities">
+                        <option>Bangalore</option>
+                        <option>Panaji</option>
+                        <option>Chennai</option>
+                        <option>Hyderabad</option>
+                        <option>Mumbai</option>
+                        <option>Trivandrum</option>
+                        <option>Bubhaneshwar</option>
+                        <option>Kolkata</option>
+                        <option>Gandhinagar</option>
+                        <option>Jaipur</option>
+                        <option>Lucknow</option>
+                        <option>Patna</option>
+                    </datalist>
+                    Enter the City Name : <input list="lstCities"  type="text" placeholder="Enter the City"/></p>
+                <p>Rate your Skill : <input type="range" id="txtRating" min="1" max="10" step="1"/></p>
+                <p>Enter the Gender : 
+                    <input type="radio" name="rdGender" id="rdGender">Male
+                    <input type="radio" name="rdGender" id="rdGender">FeMale
+                    <input type="radio" name="rdGender" id="rdGender">Others
+                </p>
+                <p>
+                    <input type="button" onclick="onProcess()" value="Save Changes"/>
+                </p>
+            </form>
+        </div>
+        <div>
+            <h2>Details of the User inputs</h2>
+            <hr>
+            <p id="pDisplay">
+
+            </p>
+        </div>    
+    </article>
+</body>
+</html>

@@ -75,4 +75,32 @@ td, tr{
     display: inline-block;
     box-shadow: 2px 2px 2px 2px red;
 }
+.polaroid{
+    width : 50%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 lightskyblue;
+    margin-bottom: 25px;
+    float:left;
+}
 
+.rounded{
+    border-radius: 50%;
+}
+input{
+    height: 20pt;
+    width:175px;
+    border-radius: 2px solid blue;
+}
+
+button{
+    background-color: indianred;
+    border: 2px solid red;
+    padding: 5px;
+    margin: 5px;
+}
+
+.search{
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
