@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="SampleWebApp.Main"  %>
+
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title></title>
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Welcome to ASP.NET Page Development</h1>
+    <hr />
+    <form id="form1" runat="server">
+        <div>
+            <asp:Menu runat="server" Orientation="Horizontal">
+                <Items>
+                    <asp:MenuItem Text="Home" NavigateUrl="~/HomePage.aspx" />
+                    <asp:MenuItem Text="Validation" NavigateUrl="~/Validations.aspx" />
+                    <asp:MenuItem Text="Disconnected Model" NavigateUrl="~/DataApp.aspx" />
+                    <asp:MenuItem Text="State Management" NavigateUrl="~/Views/StateManagement.aspx" />
+                    <asp:MenuItem Text="ShoppingApp" NavigateUrl="~/Views/ShoppingApp.aspx" />
+                    <asp:MenuItem Text="Caching" NavigateUrl="~/Views/Caching.aspx" />
+                    <asp:MenuItem Text="DataCache" NavigateUrl="~/Views/DataCaching.aspx" />
+                    <asp:MenuItem Text="Login" NavigateUrl="~/Views/LoginPage.aspx" />
+                </Items>
+            </asp:Menu>
+            <span style="float:right">
+                <asp:Label ID="lblUser" runat="server" />
+            </span>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="mainContent" runat="server">
+                <h2>Child content will be rendered here!!!</h2>
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

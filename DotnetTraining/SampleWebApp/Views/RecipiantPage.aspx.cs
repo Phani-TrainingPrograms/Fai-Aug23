@@ -22,7 +22,7 @@ namespace SampleWebApp.Views
         {
             var unBoxedData = Session["userDetails"] as UserInfo;
             var name = unBoxedData.UserName;
-            var email = unBoxedData.UserEmail;
+            var email = string.Empty;
             string display = $"The Name entered is : {name}<br/> The Email Address is {email}";
             lblDisplay.Text = display;
             lblMethod.Text = "Session";

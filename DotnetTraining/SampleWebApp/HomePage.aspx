@@ -1,8 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="SampleWebApp.HomePage" %>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" MasterPageFile="~/Main.Master" Inherits="SampleWebApp.HomePage" %>
+   
+<asp:Content runat="server" ContentPlaceHolderID="mainContent">
     <style type="text/css">
         .auto-style1 {
             color: #3366FF;
@@ -11,14 +9,13 @@
             font-size: large;
         }
     </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+    <div>
             <h1 class="auto-style1" style="text-align: center">Welcome to ASP.NET Training</h1>
         </div>
     <p class="auto-style2">
-        Welcome to ASP.NET Web App Development. It is a server side Web Technology that allows to develop Web Applications in an OOP manner using the .NET Technology</p>
+        It is a server side Web Technology that allows to develop Web Applications in an OOP manner using the .NET Technology
+
+    </p>
 
         <div>
             <p>
@@ -35,7 +32,6 @@
                 <asp:Label ID="lblDisplay" runat="server" BackColor="LightBlue" BorderColor="#6600FF" BorderStyle="Dotted" ForeColor="White" Height="122px" Width="504px" />
             </p>
         </div>
-    </form>
+</asp:Content>
 
-</body>
-</html>
+

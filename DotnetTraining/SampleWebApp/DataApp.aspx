@@ -1,14 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DataApp.aspx.cs" Inherits="SampleWebApp.DataApp" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Main.Master" CodeBehind="DataApp.aspx.cs" Inherits="SampleWebApp.DataApp" %>
+<asp:Content runat="server" ContentPlaceHolderID="mainContent">
+    <div>
             <asp:GridView runat="server" ID="grdProducts"></asp:GridView>
         </div>
         <div>
@@ -36,6 +28,4 @@
         <div>
             <asp:Calendar runat="server" />      
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>

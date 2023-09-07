@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SampleWebApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,8 +17,8 @@ namespace SampleWebApp
 
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
-            string info = $"The Name entered is {txtName.Text} and his Email Address is {txtEmail.Text}";
-            lblDisplay.Text = info;
+            //string info = $"The Name entered is {txtName.Text} and his Email Address is {txtEmail.Text}";
+            lblDisplay.Text = DbUitl.GenerateOtp();
         }
     }
 }

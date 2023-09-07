@@ -67,20 +67,42 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Controls\DataCaching.ascx" />
+    <Content Include="Controls\TimeControl.ascx" />
     <Content Include="DataApp.aspx" />
     <Content Include="DataDemo.aspx" />
     <Content Include="Global.asax" />
     <Content Include="HomePage.aspx" />
     <Content Include="lib\bootstrap\css\bootstrap.min.css" />
     <Content Include="lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="MyFile.txt" />
     <Content Include="Validations.aspx" />
+    <Content Include="Views\Caching.aspx" />
+    <Content Include="Views\ChildPage.aspx" />
+    <Content Include="Views\DataCaching.aspx" />
+    <Content Include="Views\LoginPage.aspx" />
     <Content Include="Views\RecipiantPage.aspx" />
     <Content Include="Views\ShoppingApp.aspx" />
     <Content Include="Views\StateManagement.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\DBUtil.cs" />
     <Compile Include="Common\WebUtil.cs" />
+    <Compile Include="Controls\DataCaching.ascx.cs">
+      <DependentUpon>DataCaching.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DataCaching.ascx.designer.cs">
+      <DependentUpon>DataCaching.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TimeControl.ascx.cs">
+      <DependentUpon>TimeControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\TimeControl.ascx.designer.cs">
+      <DependentUpon>TimeControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="DataApp.aspx.cs">
       <DependentUpon>DataApp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -105,6 +127,13 @@
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductRepo.cs" />
     <Compile Include="Models\UserInfo.cs" />
@@ -115,6 +144,34 @@
     </Compile>
     <Compile Include="Validations.aspx.designer.cs">
       <DependentUpon>Validations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Caching.aspx.cs">
+      <DependentUpon>Caching.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Caching.aspx.designer.cs">
+      <DependentUpon>Caching.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildPage.aspx.cs">
+      <DependentUpon>ChildPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ChildPage.aspx.designer.cs">
+      <DependentUpon>ChildPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DataCaching.aspx.cs">
+      <DependentUpon>DataCaching.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\DataCaching.aspx.designer.cs">
+      <DependentUpon>DataCaching.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\RecipiantPage.aspx.cs">
       <DependentUpon>RecipiantPage.aspx</DependentUpon>
@@ -140,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="libman.json" />
+    <Content Include="Main.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

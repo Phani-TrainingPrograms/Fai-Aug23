@@ -1,11 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Validations.aspx.cs" Inherits="SampleWebApp.Validations" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Main.Master" CodeBehind="Validations.aspx.cs" Inherits="SampleWebApp.Validations" %>
+<asp:Content runat="server" ContentPlaceHolderID="mainContent">
     <style>
         .jumbo{
             padding:30px;
@@ -16,11 +10,8 @@
             border-radius:15px;
         }
     </style>
-</head>
-<body>
-    <h1 class="jumbo">Page Validation Example</h1>
-    <hr />
-    <form id="form1" runat="server">
+            <h1 class="jumbo">Page Validation Example</h1>
+        <hr />
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -64,6 +55,5 @@
                 </div>
             </div>
         </div>
-    </form>
-</body>
-</html>
+
+</asp:Content>

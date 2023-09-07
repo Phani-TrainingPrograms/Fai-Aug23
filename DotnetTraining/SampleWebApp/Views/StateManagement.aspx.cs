@@ -29,7 +29,7 @@ namespace SampleWebApp.Views
             //Session is the part of the Page class. This can be used to store objects in the server. Session stores the data as boxed values. 
             var data = new UserInfo
             {
-                UserEmail = txtEmail.Text, UserName = txtName.Text
+                //UserEmail = txtEmail.Text, UserName = txtName.Text
             };
             Session.Add("userDetails", data);
             Response.Redirect("RecipiantPage.aspx");
