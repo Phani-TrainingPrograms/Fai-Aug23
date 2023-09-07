@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContent" runat="server">
     <h1>Please login here!!!</h1>
     <hr />
-    <asp:Login runat="server" BackColor="#EFF3FB" BorderColor="#B5C7DE" BorderPadding="4" BorderStyle="Solid" BorderWidth="1px" CreateUserText="New User?Sign Up" Font-Names="Lucida Calligraphy" Font-Size="Medium" ForeColor="#333333" Height="302px" UserNameLabelText="Login Name:" Width="713px" LoginButtonText="Sign In" ID="loginCtrl" OnAuthenticate="Unnamed1_Authenticate">
+    <asp:Login runat="server" BackColor="#EFF3FB" BorderColor="#B5C7DE" BorderPadding="4" BorderStyle="Solid" BorderWidth="1px" CreateUserText="New User?Sign Up" Font-Names="Lucida Calligraphy" Font-Size="Medium" ForeColor="#333333" Height="302px" UserNameLabelText="Login Name:" Width="713px" LoginButtonText="Sign In" ID="loginCtrl" OnAuthenticate="Unnamed1_Authenticate" CreateUserUrl="Registration.aspx">
         <InstructionTextStyle Font-Italic="True" ForeColor="Black" />
         <LoginButtonStyle BackColor="White" BorderColor="#507CD1" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284E98" />
         <TextBoxStyle Font-Size="0.8em" />
