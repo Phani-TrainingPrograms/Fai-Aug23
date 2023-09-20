@@ -1,0 +1,19 @@
+{
+  "name": "expressdemos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node sqlDemo.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "msnodesqlv8": "^4.1.0",
+    "mssql": "^10.0.1"
+  }
+}

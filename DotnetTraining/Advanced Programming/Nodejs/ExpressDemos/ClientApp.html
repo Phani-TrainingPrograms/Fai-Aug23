@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script>
+        const baseUrl = "http://localhost:1234/Employees";
+
+        const addRec = ()=>{
+            const payload = {};
+            payload.empName = $("#txtName").val();
+            payload.empAddress = $("#txtAddress").val();
+            payload.empSalary = $("#txtSalary").val();
+            payload.DeptId = $("#txtDept").val();
+
+            $.post(baseUrl, payload, (response)=>{
+                alert(response);
+                clearText();
+                $("button:eq(1)").attr("disabled", true);
+            })
+        }
+        const showDetails = (id)=>{
+            const url = baseUrl + "/" + id;
+            $.get(url, (data)=>{
+                $("#txtId").val(data.empId);
+                $("#txtName").val(data.empName);
+                $("#txtAddress").val(data.empAddress);
+                $("#txtSalary").val(data.empSalary);
+                $("#txtDept").val(data.DeptId);
+
+            })
+        }
+        const populate = ()=>{
+            //using jquery, we will hit the BES...
+            $("table").find("tr:gt(0)").remove();
+            $.get(baseUrl, (data)=>{
+                data.forEach(e => {
+                    const row = `<tr><td>${e.empId}</td><td>${e.empName}</td>
+                        <td>
+                            <a class="btn btn-warning" href='#' onclick="showDetails(${e.empId})">Edit</a>    
+                        </td></tr>`
+                    $("table").append(row)  
+                });
+            })
+        }
+        function clearText(){
+            $("#txtId").val("");
+            $("#txtName").val("");
+            $("#txtAddress").val("");
+            $("#txtSalary").val("");
+            $("#txtDept").val("");
+        }
+        function onUpdate(){
+            const id = $("#txtId").val();
+            const payload = {};
+            payload.empName = $("#txtName").val();
+            payload.empAddress = $("#txtAddress").val();
+            payload.empSalary = $("#txtSalary").val();
+            payload.DeptId = $("#txtDept").val();
+            $.ajax({
+                method: 'PUT', 
+                data : payload,
+                url : baseUrl + "/" + id,
+                success : (response) => alert(response)
+            })
+        }
+
+
+        $(document).ready(()=>{
+            $("a:first").click(populate);
+            $("button:eq(1)").attr("disabled", true);
+            $("a:eq(1)").click(()=>{
+                clearText();
+                $("button:eq(1)").attr("disabled", false);
+            })
+            $("button:eq(1)").click(addRec);
+            $("button:first").click(onUpdate);
+        })
+    </script>
+</head>
+<body>
+    <h1 class="h1">Employee Management Software</h1>
+    <hr>
+    <nav class="nav navbar text-center navbar-expand-lg bg-primary">
+        <ul class="navbar-nav  text-center">
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light">View All</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light">Add Employee</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table">
+                    <tr>
+                        <th>EmpId</th>
+                        <th>EmpName</th>
+                        <th>Details</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h2>Details of the Employee</h2>
+                <input type="text" placeholder="EmpId" id="txtId" disabled class="form-control my-2"/>
+                <input type="text" placeholder="EmpName" id="txtName" class="form-control my-2"/>
+                <input type="text" placeholder="Emp Address" id="txtAddress" class="form-control my-2"/>
+                <input type="text" placeholder="Emp Salary" id="txtSalary" class="form-control my-2"/>
+                <input type="text" placeholder="DeptID" id="txtDept" class="form-control my-2"/>
+                <button class="btn btn-primary">Save changes</button>
+                <button class="btn btn-secondary">Add Employee</button>
+                <button class="btn btn-danger">Delete Employee</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

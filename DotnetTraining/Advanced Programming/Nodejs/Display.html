@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        const url = '/records';
+        $(document).ready(()=>{
+            $.get(url, (data)=>{
+                const records = JSON.parse(data);
+                const values = records.records;
+                values.forEach(element => {
+                    const row = `<tr><td>${element.id}</td><td>${element.name}</td><td>${element.address}</td><td>${element.salary}</td></tr>`
+                    $("table").append(row);
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>List of Records with Us!!!</h1>
+    <hr>
+    <table id="tblRecords" border="1">
+         
+    </table>
+</body>
+</html>
