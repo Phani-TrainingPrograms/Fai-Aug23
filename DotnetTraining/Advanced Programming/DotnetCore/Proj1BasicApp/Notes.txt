@@ -1,0 +1,19 @@
+﻿ .NET Core provides Entity Framework(EF) for interacting with Databases. EF current version is 6.x. EF provides ORM Features for DB connectivity. Object Relational Mapping. The Tables of the database are treated as classes and the rows of the table is treated as objects and the table's complete data is treated as a Collection object. The mappings are done to the class name and its properties to the table name and its columns respectively. 
+.NET has 2 Frameworks for ORM Technology. LINQ to SQL Classes and EF. EF is for all platforms and all kinds of DBs. LINQ to SQL is only for Windows and SQL Server database.
+.NET CORE uses packages similar to the Node packages for all its external dependencies. .NET provides Nuget Package Manager for working with multiple packages. 
+While working with EF, we have 2 approaches: CodeFirst Approach and DB First Approach. 
+As the name suggests, the code first approach is prefered when U dont have any table in the database, and U know how UR data is represented in the form of a class and its associated classes. 
+The packages required for the App to use EF are:
+EFCore, EFCoreTools, EFCore SQL Server. 
+U can use PMC(Package Manager Console) to install the packages:
+install-package followed by the names of the packages. 
+Create the Model class with appropriate attributes.
+Create the Context class that derives from DbContextg and override the OnConfiguring method to configure UR Sql Server connection. 
+Run the migration command : add-migration mig1
+Run the update command : update-database
+Start using the Context object and call the APIs to insert, delete, update and find
+
+Command for DBFirst:
+Scaffold-DbContext "Server=.\SQLEXPRESS; Database=FaiTraining; Trusted_Connection=True; TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Data
+For SQL server authentication: 
+Scaffold-DbContext "Server=W-674PY03-2;Database=UrDbName; Persist Security Info=True; User ID=SA; Password=Password@123456-=; TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir data
