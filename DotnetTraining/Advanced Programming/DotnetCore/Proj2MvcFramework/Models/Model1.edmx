@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FaiTrainingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DeptTable">
+          <Key>
+            <PropertyRef Name="DeptId" />
+          </Key>
+          <Property Name="DeptId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeptName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Emptable">
+          <Key>
+            <PropertyRef Name="empId" />
+          </Key>
+          <Property Name="empId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="empName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="empAddress" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="empSalary" Type="money" Nullable="false" />
+          <Property Name="DeptId" Type="int" />
+        </EntityType>
+        <Association Name="FK__Emptable__DeptId__267ABA7A">
+          <End Role="DeptTable" Type="Self.DeptTable" Multiplicity="0..1" />
+          <End Role="Emptable" Type="Self.Emptable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeptTable">
+              <PropertyRef Name="DeptId" />
+            </Principal>
+            <Dependent Role="Emptable">
+              <PropertyRef Name="DeptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FaiTrainingModelStoreContainer">
+          <EntitySet Name="DeptTable" EntityType="Self.DeptTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Emptable" EntityType="Self.Emptable" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Emptable__DeptId__267ABA7A" Association="Self.FK__Emptable__DeptId__267ABA7A">
+            <End Role="DeptTable" EntitySet="DeptTable" />
+            <End Role="Emptable" EntitySet="Emptable" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FaiTrainingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DeptTable">
+          <Key>
+            <PropertyRef Name="DeptId" />
+          </Key>
+          <Property Name="DeptId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeptName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Emptables" Relationship="Self.FK__Emptable__DeptId__267ABA7A" FromRole="DeptTable" ToRole="Emptable" />
+        </EntityType>
+        <EntityType Name="Emptable">
+          <Key>
+            <PropertyRef Name="empId" />
+          </Key>
+          <Property Name="empId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="empName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="empAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="empSalary" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="DeptId" Type="Int32" />
+          <NavigationProperty Name="DeptTable" Relationship="Self.FK__Emptable__DeptId__267ABA7A" FromRole="Emptable" ToRole="DeptTable" />
+        </EntityType>
+        <Association Name="FK__Emptable__DeptId__267ABA7A">
+          <End Role="DeptTable" Type="Self.DeptTable" Multiplicity="0..1" />
+          <End Role="Emptable" Type="Self.Emptable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeptTable">
+              <PropertyRef Name="DeptId" />
+            </Principal>
+            <Dependent Role="Emptable">
+              <PropertyRef Name="DeptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FaiTrainingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DeptTables" EntityType="Self.DeptTable" />
+          <EntitySet Name="Emptables" EntityType="Self.Emptable" />
+          <AssociationSet Name="FK__Emptable__DeptId__267ABA7A" Association="Self.FK__Emptable__DeptId__267ABA7A">
+            <End Role="DeptTable" EntitySet="DeptTables" />
+            <End Role="Emptable" EntitySet="Emptables" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FaiTrainingModelStoreContainer" CdmEntityContainer="FaiTrainingEntities">
+          <EntitySetMapping Name="DeptTables">
+            <EntityTypeMapping TypeName="FaiTrainingModel.DeptTable">
+              <MappingFragment StoreEntitySet="DeptTable">
+                <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emptables">
+            <EntityTypeMapping TypeName="FaiTrainingModel.Emptable">
+              <MappingFragment StoreEntitySet="Emptable">
+                <ScalarProperty Name="empId" ColumnName="empId" />
+                <ScalarProperty Name="empName" ColumnName="empName" />
+                <ScalarProperty Name="empAddress" ColumnName="empAddress" />
+                <ScalarProperty Name="empSalary" ColumnName="empSalary" />
+                <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,27 @@
+﻿@model Proj2MvcFramework.Models.Employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Find</title>
+</head>
+<body>
+    <div>
+        <h1>Detals of @Model.EmpName</h1>
+        <hr />
+        <p>The Name: @Model.EmpName</p>
+        <p>The Address: @Model.EmpAddress</p>
+        <p>The Salary: @Model.EmpSalary</p>
+        <p>The Dept: @Model.DeptId</p>
+    </div>
+    <p>
+        @Html.ActionLink("Back", "AllEmployees")
+    </p>
+</body>
+</html>

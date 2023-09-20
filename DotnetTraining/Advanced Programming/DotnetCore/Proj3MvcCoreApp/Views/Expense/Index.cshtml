@@ -1,0 +1,12 @@
+﻿@using Proj3MvcCoreApp.Models;
+
+@model List<Expense>
+
+<div>
+    <h2>Expense Manager</h2>
+    <hr/>
+    @foreach(var ex in Model)
+    {
+        <p>@ex.Detail</p>
+    }
+</div>

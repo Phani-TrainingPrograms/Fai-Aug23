@@ -1,0 +1,13 @@
+﻿@model Proj3MvcCoreRecap.Models.Employee
+
+<h2>Details of the Employee</h2>
+<div>
+    <p>The Name:@Html.DisplayFor(m=>m.Name)</p>
+    <p>The Address: @Model.Address</p>
+    <p>The Salary: @Model.Salary</p>
+    <p>The Dept: @ViewBag.Dept.DeptName</p>
+    <p>The ID: @Model.Id</p>
+</div>
+<div>
+    @Html.ActionLink("Back", "Index")
+</div>

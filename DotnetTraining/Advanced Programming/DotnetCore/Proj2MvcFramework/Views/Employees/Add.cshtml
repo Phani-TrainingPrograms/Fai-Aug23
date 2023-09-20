@@ -1,0 +1,35 @@
+﻿@model Proj2MvcFramework.Models.Employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    <div> 
+        <h1>Add New Employee</h1>
+        <hr />
+        <form action="Add" method="post">
+            <div>
+                Enter the Name: @Html.EditorFor(m => m.EmpName)
+            </div>
+            <div>
+                Enter the Address: @Html.EditorFor(m => m.EmpAddress)
+            </div>
+            <div>
+                Enter the Salary: @Html.EditorFor(m => m.EmpSalary)
+            </div>
+            <div>
+                Enter the Dept: @Html.EditorFor(m => m.DeptId)
+            </div>
+            <button>Save</button>
+        </form>
+    </div>
+</body>
+</html>

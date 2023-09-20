@@ -1,0 +1,42 @@
+﻿@model List<Proj2MvcFramework.Models.Employee>
+
+@{
+    Layout = null;
+    Console.WriteLine();
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AllEmployees</title>
+</head>
+<body>
+    <h1>List of Employees with Us!!!</h1>
+    @Html.ActionLink("Add New", "Add")
+    <hr />
+    <div> 
+        <table border="1">
+            <tr>
+                <th>Emp ID</th>
+                <th>Emp Name</th>
+                <th>Emp Address</th>
+                <th>Options</th>
+            </tr>
+            @foreach(var emp in Model)
+            {
+                <tr>
+                    <td>@emp.EmpId</td>
+                    <td>@emp.EmpName</td>
+                    <td>@emp.EmpAddress</td>
+                    <td>
+                        @Html.ActionLink("View", "Find", new { id = emp.EmpId })
+                        @Html.ActionLink("Edit", "Edit", new { id = emp.EmpId })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

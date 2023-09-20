@@ -1,0 +1,40 @@
+﻿@model Proj2MvcFramework.Models.Employee
+
+@{
+    List<SelectListItem> depts = ViewBag.Depts; //ViewBag is a dynamic object and U dont need unboxing
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("AfterEdit", "Employees", FormMethod.Post))
+        {
+            <div>
+                Employee ID: @Model.EmpId
+                @Html.HiddenFor(m=>m.EmpId)
+            </div>
+            <div>
+                Enter the Name : @Html.EditorFor(m => m.EmpName)
+            </div>
+            <div>
+                Enter the Address : @Html.EditorFor(m => m.EmpAddress)
+            </div>
+            <div>
+                Enter the Salary : @Html.EditorFor(m => m.EmpSalary)
+            </div>
+            <div>
+                Enter the Dept : @Html.DropDownListFor(m => m.DeptId, depts)
+            </div>
+            <div>
+                <button>Save Changes</button>
+            </div>
+        }
+    </div>
+</body>
+</html>
