@@ -1,0 +1,26 @@
+<h1>{{title | uppercase}}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div>
+        <h2>{{userDetails.empName}}</h2>
+        <hr/>
+        <p>{{userDetails.empAddress}}</p>
+        <p>{{userDetails.empSalary | currency : 'INR' }}</p>
+      </div>
+      <div>
+        <button (click)="onClick()">Click Me!!!</button>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <h2>Calc Program</h2>
+      <app-calc></app-calc>
+    </div>
+    <div class="col-md-6">
+      <app-emp-detail></app-emp-detail>
+    </div>
+  </div>
+  <div class="row">
+    <app-master></app-master>
+  </div>
+</div>

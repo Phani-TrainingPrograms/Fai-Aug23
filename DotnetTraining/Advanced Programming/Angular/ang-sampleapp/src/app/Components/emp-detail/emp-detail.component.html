@@ -1,0 +1,28 @@
+<div class="container">
+    <h2 class="h1 text-center">{{this.empObj.empName}}</h2>
+    <div class="row">
+      <div class="col-md-5">
+        <p>
+          <img [src]="this.empObj.picture" width="175px" height="200px"/>
+        </p>
+      </div>
+      <div class="col-md-4">
+        <p>{{this.empObj.empAddress}}</p>
+        <p>{{this.empObj.empSalary}}</p>
+      </div>
+      <div class="col-md-2">
+        <div>
+          <button class="btn btn-primary my-2">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+          <button class="btn btn-danger my-2">
+            <i class="fa fa-trash"
+             aria-hidden="true"></i>
+          </button>
+          <button class="btn btn-secondary my-2">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      </div>
+</div>
