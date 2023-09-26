@@ -1,1 +1,26 @@
-<p>add-emp works!</p>
+<div class="container">
+    {{newEmp | json}}
+    <div class="row">
+        <h2 class="h2 m-2 p-3">Adding New Employee</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            Enter the Name : <input type="text" [(ngModel)] = "newEmp.empName" class="form-control m-3"/>
+            Enter the Email : <input type="email" [(ngModel)] = "newEmp.emailAddress" class="form-control m-3"/>
+            Enter the Phone : <input type="number" [(ngModel)] = "newEmp.phoneNo" class="form-control m-3"/>
+            Enter the File Name only: <input type="text" [(ngModel)] = "newEmp.imageFile" class="form-control m-3"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <button class="btn btn-danger m-2" (click)="onNewEmp()">
+                <i class="fa fa-save" aria-hidden="true"></i>
+                Add Record
+            </button>
+            <button class="btn btn-secondary" routerLink="/">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                Back
+            </button>
+        </div>
+    </div>
+</div>
