@@ -7,6 +7,10 @@ import { Employee } from 'src/app/Models/employee';
   styleUrls: ['./master.component.css']
 })
 export class MasterComponent implements OnInit {
+  //fields of the class:
+  empList : Employee[] = [];
+  searchByName  : string = "";
+  
   ngOnInit(): void {
     this.empList.push({
       empId : 123, empName : "Phaniraj", empAddress : "Bangalore", empSalary : 56000, picture : 'assets/images/pic1.png'
@@ -27,7 +31,6 @@ export class MasterComponent implements OnInit {
       empId : 128, empName : "Phaniraj", empAddress : "Bangalore", empSalary : 56000, picture : 'assets/images/pic2.png'
     });
   }
-  empList : Employee[] = [];
 
   onDataModified(modified : Employee){
     //code to update the Array..
