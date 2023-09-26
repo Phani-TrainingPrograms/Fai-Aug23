@@ -1,12 +1,9 @@
 <div class="container">
-    <p>
-        {{empList | json}}
-    </p>
     <div class="row">
         <div *ngFor="let emp of empList" class="col-md-5">
             <div>
-                <app-emp-detail [empObj]="emp"/>
+                <app-emp-detail [empObj]="emp" (onUpdate)="onDataModified($event)" (onDelete)="onDataDeleted($event)" />
             </div>
+        </div>
     </div>
-</div>
 </div>

@@ -29,5 +29,24 @@ export class MasterComponent implements OnInit {
   }
   empList : Employee[] = [];
 
+  onDataModified(modified : Employee){
+    //code to update the Array..
+    const index = this.empList.findIndex(e => e.empId == modified.empId);
+    if(index < 0){
+      alert("No employee is found");
+    }else{
+      this.empList.splice(index, 1, modified);
+      alert("Employee is updated to the database")
+    } 
+  }
 
+  onDataDeleted(no : number){
+    const index = this.empList.findIndex(e => e.empId == no);
+    if(index < 0){
+      alert("Employee not found to delete");
+    }else{
+      this.empList.splice(index, 1);
+      alert("Employee is deleted")
+    }
+  }
 }

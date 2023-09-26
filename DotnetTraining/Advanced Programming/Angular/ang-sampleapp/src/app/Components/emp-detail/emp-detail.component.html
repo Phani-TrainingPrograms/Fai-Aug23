@@ -7,17 +7,26 @@
         </p>
       </div>
       <div class="col-md-4">
-        <p>{{this.empObj.empAddress}}</p>
-        <p>{{this.empObj.empSalary}}</p>
+        <p>
+            Employee Name: 
+            <input class="form-control" [(ngModel)]="empObj.empName" placeholder="Name"/> 
+        </p>
+        <p>
+            Employee Address: 
+            <input class="form-control" [(ngModel)]="empObj.empAddress" placeholder="Address"/> 
+        </p>
+        <p>
+            Employee Salary: 
+            <input class="form-control" [(ngModel)]="empObj.empSalary" placeholder="Salary"/> 
+        </p>
       </div>
       <div class="col-md-2">
         <div>
-          <button class="btn btn-primary my-2">
+          <button class="btn btn-primary my-2" (click)="onEmployeeUpdate()">
             <i class="fa fa-pencil" aria-hidden="true"></i>
           </button>
-          <button class="btn btn-danger my-2">
-            <i class="fa fa-trash"
-             aria-hidden="true"></i>
+          <button class="btn btn-danger my-2" (click)="onEmployeeDelete()">
+            <i class="fa fa-trash" aria-hidden="true"></i>
           </button>
           <button class="btn btn-secondary my-2">
             <i class="fa fa-eye" aria-hidden="true"></i>
