@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Examples App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="./EventHandlers.js"></script>
+    <script>
+        $(document).ready(() => {
+            init();
+        });
+    </script>
+</head>
+<body>
+    <h1>Sample App for Examples</h1>
+    <hr />
+    <nav>
+        <p class="btn btn-primary">
+            <a class="text-light" href="#">Display</a>
+        </p>
+        <p class="btn btn-info">
+            <a href="#">Add New Example</a>
+        </p>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h2>List of Examples</h2>
+                <div id="area">
+
+                </div>
+            </div>
+            <div class="col-md-5">
+                <h2>Edit Examples</h2>
+                <p>Example Id: <span id="spID"></span></p>
+                <p>
+                    <input class="form-control" placeholder="Name of the Example" id="txtName" />
+                </p>
+                <p>
+                    <input class="form-control" placeholder="Desc of the Example" id="txtDesc" />
+                </p>
+                <p>
+                    <select id="slCategories" class="form-control">
+                        <option>Select Category</option>
+                    </select>
+                </p>
+                <p>
+                    <input type="file" placeholder="File Location" id="txtFile" class="form-control"/>
+                </p>
+                <p>
+                    <button class="btn btn-warning">Save Changes</button>
+                    <button class="btn btn-danger">Add New</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
