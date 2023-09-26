@@ -33,3 +33,34 @@
 ## Commands to generate Components in Angular
 1. ng g i Models/InterfaceName
 2. ng g c Components/Calc
+
+## Interaction b/w the components: 
+1. From the parent component to the child component, we use Input Directive which works like attributes that can be set from the parent component. 
+2. From the child to the parent component, we use Output Directive which is an instance of EventEmitter, the event creator in Angular Apps. The EventEmitter's emit function is used to trigger the event, it can have any data type that could be emitted from the child to the parent(Caller) component. 
+
+## Pipes in Angular
+- Pipes are transformation code that makes UI render the content as per the transformation of the HTML Content. 
+- There are built in pipes that help in transforming the data as: 
+    - uppercase
+    - lowercase
+    - currency
+    - json
+    - Percentage
+    - Decimal
+    - Date
+- U can create Custom pipes using the CLI:
+    - ng g p Pipes/PipeName --skip-tests
+- Custom Pipes are classes in Angular that has Pipe Directive and implements an interface called PipeTransform.
+- The PipeTransform interface has one method called transform that contains the logic of modifing the data into the format U want to present. 
+
+## Services in Angular
+- A service is an injectable class which maintains a single reference across the components of the module. 
+- The scope of the service is limited to the module that U use it. 
+- A service is required to share the data and functions that can be used across the components of the module. 
+- It maintains a single reference where ever U use it within the module. 
+- The references of this service can be injected into the components using the DI feature of Angular. 
+- Services are created using the CLI Command: 
+```
+ng generate service Services/ServiceName    
+```
+
