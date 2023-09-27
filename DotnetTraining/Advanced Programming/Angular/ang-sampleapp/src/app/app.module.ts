@@ -1,21 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from "@angular/common/http";
+
 import { AppComponent } from './app.component';
-import { CalcComponent } from './Components/calc/calc.component';
-import { EmpDetailComponent } from './Components/emp-detail/emp-detail.component';
-import { MasterComponent } from './Components/master/master.component';
+import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
+import { EmpMgrComponentComponent } from './Components/emp-mgr-component/emp-mgr-component.component';
+import { ViewEmpComponent } from './Components/view-emp/view-emp.component';
+import { EditEmpComponent } from './Components/edit-emp/edit-emp.component';
+import { AddEmpComponent } from './Components/add-emp/add-emp.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CalcComponent,
-    EmpDetailComponent,
-    MasterComponent
+    NavBarComponent,
+    EmpMgrComponentComponent,
+    ViewEmpComponent,
+    EditEmpComponent,
+    AddEmpComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

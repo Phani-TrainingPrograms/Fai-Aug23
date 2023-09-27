@@ -1,0 +1,41 @@
+<div class="container m-2">
+    <div class="row">
+        <div class="col-sm-6" *ngFor="let emp of empList">
+            <div class="card">
+                <div class="card-header">
+                    <h2>{{emp.empName | uppercase}}</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img [src]="emp.imageFile" class="imgCard"/>
+                        </div>
+                        <div class="col-sm-5">
+                            <input text="text" class="form-control my-4" [value]="emp.empId"/>
+                            <input text="text" class="form-control my-4" [value]="emp.emailAddress"/>
+                        </div>
+                        <div class="col-sm-1">
+                            <ul class="navbar" style="list-style-type: none;">
+                                <li class="nav-item">
+                                    <a routerLink="/employees/view/{{emp.empId}}" class="btn btn-primary btn-sm my-2">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="btn btn-danger btn-sm my-2" (click)="onDelete(emp.empId)">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a routerLink="/employees/edit/{{emp.empId}}" class="btn btn-primary btn-sm my-2">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

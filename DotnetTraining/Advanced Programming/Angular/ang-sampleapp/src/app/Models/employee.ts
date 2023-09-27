@@ -1,7 +1,7 @@
 export interface Employee {
-    empId : number,
-    empName : string,
-    empAddress : string,
-    empSalary : number,
-    picture : string
+    empId: number,
+    empName: string,
+    emailAddress: string,
+    phoneNo: number,
+    imageFile: string
 }
