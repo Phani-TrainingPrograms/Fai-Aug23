@@ -1,0 +1,63 @@
+<h2>Template Driven Forms</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <form #empForm = "ngForm" (ngSubmit)="onSubmit(empForm)">
+                <div>
+                    <label for="empId">Emp Id:</label>
+                    <input type="number" class="form-control" name="empId" min="100" max="200" #id = "ngModel" required [(ngModel)]="emp.empId"/>
+                    <p *ngIf="!id.valid && id?.touched">
+                        <span class="err" *ngIf="id.errors?.['required']">
+                            ID is Mandatory
+                        </span>
+                        <span class="err" *ngIf="id.errors?.['min']">
+                           ID should be min of 100
+                        </span>
+                        <span class="err" *ngIf="id.errors?.['max']">
+                            ID should be max of 200
+                         </span>
+                    </p>
+                </div>
+                <div>
+                    <label for="empName">Emp Name:</label>
+                    <input type="text" class="form-control" name="empName" #empName = "ngModel" required [(ngModel)]="emp.empName"/>
+                    <p *ngIf="!empName.valid && empName.touched">
+                        <span class="err" *ngIf="empName.errors?.['required']">
+                            Name is mandatory
+                        </span>
+                    </p>
+                </div>
+
+                <div>
+                    <label for="emailAddress">Emp Email Address:</label>
+                    <input type="email" class="form-control" name="emailAddress" #emailAddress = "ngModel" required [(ngModel)]="emp.emailAddress"/>
+                    <p *ngIf="!emailAddress.valid && emailAddress.touched">
+                        <span class="err" *ngIf="emailAddress.errors?.['required']">
+                            Email is mandatory
+                        </span>
+                        <span class="err" *ngIf="emailAddress.errors?.['email']">
+                            Email is not in proper format
+                        </span>
+                    </p>
+                </div>
+                <div>
+                    <label for="phoneNo">Emp Contact No:</label>
+                    <input type="number" minlength="10" class="form-control" name="phoneNo" #phoneNo = "ngModel" required [(ngModel)]="emp.phoneNo"/>
+                    <p *ngIf="!phoneNo.valid && phoneNo.touched">
+                        <span class="err" *ngIf="phoneNo.errors?.['required']">
+                            Phone No is mandatory
+                        </span>
+                        <span class="err" *ngIf="phoneNo.errors?.['minlength']">
+                            Phone No should be 10 digit no
+                        </span>
+                    </p>
+                </div>
+                <div>
+                    <label for="imageFile">Picture to Load:</label>
+                    <input type="text" class="form-control" name="imageFile" #imageFile = "ngModel" required [(ngModel)]="emp.imageFile"/>
+                </div>
+                <button [disabled]="!empForm.valid" class="btn btn-danger" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
