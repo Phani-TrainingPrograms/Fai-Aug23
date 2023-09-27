@@ -64,3 +64,20 @@
 ng generate service Services/ServiceName    
 ```
 
+## Forms in Angular
+- Forms are required to perform client side validations on inputs provided by the Angular Apps.
+- There are 2 ways of performing validations in Angular
+    - Reactive Forms
+    - Template Driven Forms
+- Template Driven Forms use the HTML Elements and its attributes to perform the client side validations like Email, required, Min and Max and many more. 
+- Reactive Forms are more object oriented and use the Angular features to perform the validations required for the models. It is also called as Model driven Validations. 
+
+## Modules in Angular
+- Modules are independent Blocks of the Applications that contain one or more components with services, pipes and directives to become a part of the Application. 
+- Modules was introduced from Angular 5.
+- Modules allow to be created and loaded at runtime, instead of loading it at the start of the Application. This feature of loading the Units as and when it is required is called as Lazy Loading. The Opposite of Lazy loading is Eager Loading. 
+- U cannot do Lazy loading with Components, U have bind those components into a module and load the Module at runtime. 
+- Modules are created using the following command:
+```
+ng generate module Modules/ModuleName
+```
