@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <h1>{{title}}</h1>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-8">
+            <form [formGroup]="empForm" (ngSubmit)="onSubmit()">
+                <div>
+                    <label for="empId">Enter the ID:</label>
+                    <input type="number" name="empId" class="form-control" formControlName="empId" />
+                    <p *ngIf="(empId?.invalid && empId?.touched || empId?.dirty)">
+                        <span class="err" *ngIf="empId?.errors?.['required']">
+                            Emp ID is mandatory
+                        </span>
+                        <span class="err" *ngIf="empId?.errors?.['min']">
+                            Emp ID must be min 100
+                        </span>
+                        <span class="err" *ngIf="empId?.errors?.['max']">
+                            Emp ID must be max of 200
+                        </span>
+                    </p>
+                </div>
+                <div>
+                    <label for="empName">Enter the Name:</label>
+                    <input type="text" name="empName" class="form-control" formControlName="empName" />
+                </div>
+                <div>
+                    <label for="emailAddress">Enter the Email Address:</label>
+                    <input type="text" name="emailAddress" class="form-control" formControlName="emailAddress" />
+                </div>
+                <div>
+                    <label for="phoneNo">Enter the Phone:</label>
+                    <input type="tel" name="phoneNo" class="form-control" formControlName="phoneNo" />
+                </div>
+                <div>
+                    <label for="imageFile">Enter the Image File:</label>
+                    <input type="text" name="imageFile" class="form-control" formControlName="imageFile" />
+                </div>
+                <div>
+                    <button class="btn btn-danger" [disabled]="this.empForm.invalid">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

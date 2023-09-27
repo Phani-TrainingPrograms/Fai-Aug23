@@ -30,7 +30,7 @@
 
                 <div>
                     <label for="emailAddress">Emp Email Address:</label>
-                    <input type="email" class="form-control" name="emailAddress" #emailAddress = "ngModel" required [(ngModel)]="emp.emailAddress"/>
+                    <input type="email" class="form-control" email name="emailAddress" #emailAddress = "ngModel" required [(ngModel)]="emp.emailAddress"/>
                     <p *ngIf="!emailAddress.valid && emailAddress.touched">
                         <span class="err" *ngIf="emailAddress.errors?.['required']">
                             Email is mandatory
