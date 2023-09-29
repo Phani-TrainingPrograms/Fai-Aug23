@@ -23,7 +23,7 @@ export default function ContactList() {
       <div className="container">
         <div className="row">
           {
-            contacts.map((c)=> <Contact contact ={c} /> )
+            contacts.map((c)=> <Contact contact ={c} disabled ={true} /> )
           }
         </div>
       </div>

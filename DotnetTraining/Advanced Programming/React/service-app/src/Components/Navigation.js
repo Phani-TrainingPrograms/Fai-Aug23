@@ -10,7 +10,7 @@ export default function Navigation(props) {
                 </Link>
             </li>
             <li>
-            <Link to={`/contacts/edit/${props.id}`} className='btn btn-success m-2'>
+            <Link to={`/contacts/view/${props.id}`} className='btn btn-success m-2'>
                     <i class="fa fa-eye" aria-hidden="true"></i>
                 </Link>
             </li>

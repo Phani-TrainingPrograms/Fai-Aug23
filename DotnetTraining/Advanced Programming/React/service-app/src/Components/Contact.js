@@ -11,10 +11,10 @@ export default function Contact(props) {
                     <ImageComponent url={"/images/" + props.contact.image}/>
                 </div>
                 <div className="col-md-6">
-                    <input type='text' className='form-control m-2' placeholder='ContactID' value={props.contact.id}/>
-                    <input type='text' className='form-control m-2' placeholder='Contact Name' value={props.contact.fullName}/>
-                    <input type='text' className='form-control m-2' placeholder='Contact Email' value={props.contact.emailAddress}/>
-                    <input type='text' className='form-control m-2' placeholder='Contact Phone' value={props.contact.phoneNo}/>
+                    <input type='text' disabled={props.disabled} className='form-control m-2' placeholder='ContactID' value={props.contact.id}/>
+                    <input type='text'  disabled={props.disabled} className='form-control m-2' placeholder='Contact Name' value={props.contact.fullName}/>
+                    <input type='text'  disabled={props.disabled} className='form-control m-2' placeholder='Contact Email' value={props.contact.emailAddress}/>
+                    <input type='text'  disabled={props.disabled} className='form-control m-2' placeholder='Contact Phone' value={props.contact.phoneNo}/>
                 </div>
                 <div className="col-md-2">
                     <Navigation id={props.contact.id}/>
