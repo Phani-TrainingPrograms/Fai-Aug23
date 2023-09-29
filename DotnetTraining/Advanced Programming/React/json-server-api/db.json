@@ -1,0 +1,5 @@
+{
+    "contacts" : [
+        {"id" : 111, "fullName" : "Phaniraj", "emailAddress" : "phanirajbn@gmail.com", "phoneNo" : 9945205684, "image" : "Pic1.png"}
+    ]
+}
