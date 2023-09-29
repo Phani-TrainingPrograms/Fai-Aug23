@@ -1,4 +1,6 @@
 import React from 'react'
+import ImageComponent from './ImageComponent'
+import Navigation from './Navigation'
 
 export default function Contact(props) {
   return (
@@ -6,14 +8,17 @@ export default function Contact(props) {
         <div className="container">
             <div className="row">
                 <div className="col-md-4">
-                    <p>Image</p>
+                    <ImageComponent url={"/images/" + props.contact.image}/>
                 </div>
                 <div className="col-md-6">
                     <input type='text' className='form-control m-2' placeholder='ContactID' value={props.contact.id}/>
-                    <input type='text' className='form-control m-2' placeholder='ContactID' value={props.contact.fullName}/>
-                    <input type='text' className='form-control m-2' placeholder='ContactID' value={props.contact.emailAddress}/>
+                    <input type='text' className='form-control m-2' placeholder='Contact Name' value={props.contact.fullName}/>
+                    <input type='text' className='form-control m-2' placeholder='Contact Email' value={props.contact.emailAddress}/>
+                    <input type='text' className='form-control m-2' placeholder='Contact Phone' value={props.contact.phoneNo}/>
                 </div>
-                <div className="col-md-2">nav</div>
+                <div className="col-md-2">
+                    <Navigation id={props.contact.id}/>
+                </div>
             </div>
         </div>
     </div>

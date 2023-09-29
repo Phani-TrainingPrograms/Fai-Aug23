@@ -18,7 +18,6 @@ export default function ContactList() {
   }, []);
 
   let { contacts } = state;
-  const contactNames = contacts.map((c) => (<tr>{c.fullName}</tr>))
   return (
     <>
       <div className="container">
