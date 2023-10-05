@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="EmpData">
+  <DataContextMoniker Name="/EmpDataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f44df166-19fb-4f22-9ee8-4c7e1621057b" absoluteBounds="1.375, 0.875, 2, 1.7472693796952563">
+      <DataClassMoniker Name="/EmpDataDataContext/EmpTable" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d57bf6e2-b006-402d-9682-5ed6906b3b72" absoluteBounds="1.3899999999999997, 1.335, 1.9700000000000002, 1.1872693796952565" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ee53c658-b1ab-46b5-8ef0-c8732a112258" absoluteBounds="5.25, 1.25, 2, 1.1812700506051381">
+      <DataClassMoniker Name="/EmpDataDataContext/DeptTable" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3af0ba05-6604-4dba-8bec-776128554789" absoluteBounds="5.265, 1.71, 1.9700000000000002, 0.62127005060513807" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.25 : 1.84063502530257); (3.375 : 1.84063502530257)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EmpDataDataContext/DeptTable/DeptTable_EmpTable" />
+      <nodes>
+        <classShapeMoniker Id="ee53c658-b1ab-46b5-8ef0-c8732a112258" />
+        <classShapeMoniker Id="f44df166-19fb-4f22-9ee8-4c7e1621057b" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
